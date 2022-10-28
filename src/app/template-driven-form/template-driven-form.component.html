@@ -1,0 +1,25 @@
+<div>
+  <h2>Đây là trang form nhập</h2>
+  <br>
+  <form #bookForm="ngForm" (ngSubmit)="submitForm()">
+    <!-- <label>Name:  </label>
+    <input
+      type="text"
+      [(ngModel)]="name"
+      [ngModelOptions]="{ standalone: true }"
+    /> -->
+    <ng-container class="form-group">
+      <label for="bookName">Book Name</label>
+      <input name="name" [(ngModel)]="book.name" type="text" class="form-control">
+      <br>
+      <label for="year">Year</label>
+      <input  name="year" [(ngModel)]="book.year" type="text" class="form-control">
+      <br>
+      <label for="stars">Stars</label>
+      <input  name="stars" [(ngModel)]="book.stars" type="text" class="form-control">
+    </ng-container>
+    <br>
+    <br>
+    <button>Submit</button>
+  </form>
+</div>

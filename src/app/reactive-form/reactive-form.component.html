@@ -1,0 +1,52 @@
+<div>
+  <h2>Đây là trang form nhập</h2>
+  <br>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <div style="display: flex;">
+      <label>Name:</label>
+      <input type="text" formControlName="name" />
+      <!-- <span *ngIf="!formData.controls.name.valid" style="color: red">
+        Name is required
+      </span> -->
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <div *ngIf="name?.errors?.['required']" style="color: red">
+          Name is required.
+        </div>
+        <div *ngIf="name?.errors?.['minlength']" style="color: red">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="name?.errors?.['pattern']" style="color: red">
+          Name not format.
+        </div>
+      </div>
+    </div>
+    <br>
+    <div style="display: flex;">
+      <label>Age:</label>
+      <input type="text" formControlName="age" />
+      <!-- <span *ngIf="!formData.controls.age.valid" style="color: red">
+        Age is required
+      </span> -->
+      <div>
+        <!-- <div *ngIf="age?.errors?.['required'] && (age?.dirty || age?.touched)" style="color: red">
+          Age is required.
+        </div>
+        <div *ngIf="age?.errors?.['minlength'] && age?.invalid && (age?.dirty || age?.touched)" style="color: red">
+          Age must be at least 8 characters long.
+        </div>
+        <div *ngIf="age?.errors?.['email'] && age?.invalid && (age?.dirty || age?.touched)" style="color: red">
+          Age not format.
+        </div> -->
+        <pre>dirty? {{age?.dirty}}</pre>
+        <pre>pristine? {{age?.pristine}}</pre>
+        <pre>touched? {{age?.touched}}</pre>
+        <pre>untouched? {{age?.untouched}}</pre>
+        <pre>valid? {{age?.valid}}</pre>
+        <pre>invalid? {{age?.invalid}}</pre>
+      </div>
+    </div>
+    <br>
+    <br>
+    <button type="submit" [disabled]="!formData.valid">Submit</button>
+  </form>
+</div>

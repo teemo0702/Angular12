@@ -1,0 +1,18 @@
+<div>
+  <h2>Đây là trang tìm kiếm</h2>
+  <br>
+  <label>Tỉnh / Thành phố</label>
+  <select id="province" (change)="changeProvince($event)">
+    <option *ngFor="let data of vietNam" value="{{data.province}}">
+      {{data.province}}
+    </option>
+  </select>
+  <br>
+  <br>
+  <label>Quận / Huyện</label>
+  <select id="district">
+    <option *ngFor="let district of districts" value="{{district}}">
+      {{district}}
+    </option>
+  </select>
+</div>

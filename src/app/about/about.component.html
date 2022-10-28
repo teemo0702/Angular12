@@ -1,1 +1,20 @@
-<p>about works!</p>
+<div>
+  <h2>Đây là trang giới thiệu</h2>
+  <br>
+
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="name"/>
+  <br>
+  <label>Age:</label>
+  <input type="text" [(ngModel)]="age"/>
+
+  <h3>Hello {{name}}</h3>
+  <h3>Tuổi bạn là {{age}}</h3>
+
+  <div *ngIf="age <= 24; then tre; else gia"></div>
+  <ng-template #tre><h3>Non và xanh lắm</h3></ng-template>
+  <ng-template #gia><h3>Già mà ngu</h3></ng-template>
+
+  <button (click)="resetInfo()">Reset</button>
+
+</div>

@@ -1,0 +1,24 @@
+<!-- <h1 appHighLight [nameHighLight]="nameColor" nameChild="Duc" (childName)="setName($event)">Đây là component parent</h1>
+<p>{{parentMessenger}}</p>
+<button (click)="getMoney()">Cho con money</button>
+<br>
+<br>
+<input type="text" placeholder="Enter color" [(ngModel)]="nameColor"/>
+<br>
+<br>
+<input type="text" placeholder="Enter acc" [(ngModel)]="nameAcc"/>
+<br>
+<br>
+<app-children #thangTeo name="Teo" (childCall)="childCall($event)"></app-children>
+<br>
+<br>
+<app-children #thangTi name="Ti" (childCall)="childCall($event)"></app-children> -->
+
+<!-- lifecycle -->
+<h1>Parent Component</h1>
+<button (click)="toggleChild()">Toggle Child</button>
+<input type="text" [(ngModel)]="firstName">
+<hr>
+<app-children *ngIf="isChild" [nameChild]="firstName">
+    <h2 #parentContent>This is content from parent</h2>
+</app-children>

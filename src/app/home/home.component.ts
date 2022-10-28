@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public fruits = [
+    {name: 'Táo', price: 100, sale: true},
+    {name: 'Chuối', price: 10, sale: false},
+    {name: 'Cam', price: -50, sale: true}
+  ];
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  public ngOnInit(): void {
 
+  }
 }

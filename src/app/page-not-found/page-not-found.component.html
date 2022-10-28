@@ -1,0 +1,17 @@
+<p>Không tìm thấy trang web !!!</p>
+<!-- <p [appHighLight]="'red'">Error 404</p>
+<p [appHighLight]="myColor">Error {{counter}}</p>
+<p [appHighLight]="myColor">Error {{counterSquare}}</p> -->
+
+<ul [ngSwitch]="loginName">
+  <li *ngSwitchCase="'user'">
+    <p>User is logged in ...</p>
+  </li>
+  <li *ngSwitchCase="'admin'">
+    <p>Admin is logged in ...</p>
+    <app-home></app-home>
+  </li>
+  <li *ngSwitchDefault>
+    <p>Please choose login name</p>
+  </li>
+</ul>

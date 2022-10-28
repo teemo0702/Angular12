@@ -1,7 +1,20 @@
-<h1>Đây là các dòng lệnh!</h1>
-<h3>Create component:</h3>
-<p class="test">ng g c "name component"</p>
-<p class="test">npm start = ng serve</p>
-<p class="test">git push</p>
-<h3>Create branch:</h3>
-<p class="test">git checkout -b "name branch"</p>
+<div>
+  <h2>Đây là chợ hoa quả</h2>
+  <h3>Các loại trái cây đang bán</h3>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Sale</th>
+    </tr>
+    <tr *ngFor="let fruit of fruits; let i = index; ">
+      <td>{{i + 1}}</td>
+      <td>{{fruit.name}}</td>
+      <td class="right">
+        <span [ngClass]="{ 'neg': fruit.price < 0 }">{{fruit.price | currency}}</span>
+      </td>
+      <td class="left">{{fruit.sale | onSale | uppercase}}</td>
+    </tr>
+  </table>
+</div>
